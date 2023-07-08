@@ -38,6 +38,7 @@ body{
   line-height: 2.1428;
   color: #666666;
   -webkit-overflow-scrolling:touch;
+  cursor: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3bLKtz0qO2fvi6k3l0O-cQBpF9z9ICBZ2EA&usqp=CAU'), url('https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-cursor-icon-png-image_4144263.jpg'), url('goldenarrow.png'), auto;
 }
 
 
