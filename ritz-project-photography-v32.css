@@ -1,0 +1,9 @@
+/* Retain the supplied portrait and landscape photographs without gallery cropping. */
+.photo-project .case-intro>p:last-child{max-width:760px;margin-inline:auto}
+.photo-project .case-hero{height:auto;min-height:0;max-width:1400px;margin-inline:auto;padding-inline:3%}
+.photo-project .case-hero img{width:100%;height:auto;max-height:85svh;object-fit:contain}
+.photo-project .case-gallery{align-items:start}
+.photo-project .gallery-item:nth-child(3n+1){grid-column:auto}
+.photo-project .gallery-item.gallery-wide{grid-column:1/-1}
+.photo-project .gallery-item img{height:auto;aspect-ratio:auto;object-fit:contain}
+@media(max-width:700px){.photo-project .case-hero{padding-inline:6%}.photo-project .case-hero img{max-height:none}}

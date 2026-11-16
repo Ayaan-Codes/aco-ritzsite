@@ -1,0 +1,95 @@
+/* Liquid-glass surfaces: transparent navy, rounded rims and layered highlights. */
+:root{
+ --glass-rim:1px solid #ffffff80;
+ --glass-shadow:inset 0 1px 1px #ffffffa6,inset 0 -1px 1px #ffffff38,0 16px 40px #07162b26;
+}
+#about{scroll-margin-top:-100px}
+#site-menu,#enquiry{
+ color:#f7faff;
+ border:var(--glass-rim);
+ border-radius:36px;
+ background:linear-gradient(125deg,#7997b547 0%,#1c3457b8 45%,#142743d9 100%);
+ box-shadow:var(--glass-shadow),inset 1px 0 0 #ffffff30;
+ backdrop-filter:blur(22px) saturate(150%);
+ -webkit-backdrop-filter:blur(22px) saturate(150%);
+}
+#site-menu::backdrop,#enquiry::backdrop{
+ background:#10213b36;
+ backdrop-filter:blur(3px);
+ -webkit-backdrop-filter:blur(3px);
+}
+#site-menu{padding:68px 28px 28px}
+#site-menu nav{
+ padding:12px 22px;
+ border:1px solid #ffffff3b;
+ border-radius:24px;
+ background:linear-gradient(150deg,#ffffff14,#ffffff03 60%,#07162b14);
+ box-shadow:inset 0 1px 0 #ffffff36,0 8px 22px #07162b12;
+}
+#site-menu nav a{border-color:#ffffff2e}
+#site-menu nav a:last-child{border-bottom:0}
+#site-menu nav a:hover{color:#fff;background:#ffffff12}
+#site-menu>p{padding:0 22px;color:#e0e9f3}
+#site-menu .dialog-close,#enquiry .dialog-close{color:inherit}
+#enquiry .form-note,#enquiry #form-result{color:#e3edf7}
+#enquiry input,#enquiry select,#enquiry textarea{
+ color:#13213c;background:#f4f8fced;border:1px solid #ffffffb3;border-radius:12px;
+}
+#enquiry option{color:#13213c;background:#f5f7fa}
+.project-intro .button,.contact-section>.button,#enquiry .button{
+ position:relative;
+ min-height:58px;
+ padding:18px 52px;
+ justify-content:center;
+ gap:0;
+ text-align:center;
+ border-radius:999px;
+ border:var(--glass-rim);
+ background:linear-gradient(130deg,#ffffff80 0%,#c1d2e34d 50%,#91a7bd47 100%);
+ box-shadow:var(--glass-shadow);
+ backdrop-filter:blur(18px) saturate(150%);
+ -webkit-backdrop-filter:blur(18px) saturate(150%);
+}
+.project-intro .button>span,.contact-section>.button>span:not(.button-label){
+ position:absolute;right:24px;top:50%;transform:translateY(-50%);
+}
+.contact-section>.button>.button-label{display:block;text-align:center}
+.contact-section>.button{
+ min-width:320px;
+ color:#fff;
+ background:linear-gradient(130deg,#ffffff30,#a8c3df18 55%,#ffffff08);
+ box-shadow:var(--glass-shadow),0 0 28px #7ca7d010;
+}
+.project-intro .button:hover{background:linear-gradient(130deg,#ffffffc2,#bdcfe36b);color:var(--ink)}
+.contact-section>.button:hover,#enquiry .button:hover{background:linear-gradient(130deg,#ffffff42,#acc9e522);color:#fff}
+.site-header .control{
+ border:1px solid #ffffff70;
+ border-radius:999px;
+ background:linear-gradient(130deg,#ffffff40,#dae6f12e);
+ box-shadow:inset 0 1px 0 #ffffff80,0 4px 16px #07162b0d;
+ backdrop-filter:blur(16px) saturate(140%);
+ -webkit-backdrop-filter:blur(16px) saturate(140%);
+}
+.featured-controls button,.project-filters button{
+ border:1px solid #ffffff70;border-radius:999px;
+ background:linear-gradient(135deg,#ffffff2e,#bccfe012);
+ box-shadow:inset 0 1px 0 #ffffff60,0 5px 15px #07162b12;
+ backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+ min-height:44px;min-width:44px;
+}
+.project-filters button{padding:12px 20px}
+.project-filters button[aria-pressed="true"]{background:linear-gradient(135deg,#375373,#13213c);color:white}
+.swirl-pin>.perspective-copy p:nth-child(2){max-width:620px;line-height:1.7}
+@media(max-width:700px){
+ #site-menu,#enquiry{border-radius:28px}
+ #site-menu{padding:62px 16px 22px}
+ #site-menu nav{padding:8px 18px;border-radius:20px}
+ #site-menu>p{padding:0 18px}
+ .contact-section>.button{min-width:0;width:100%;max-width:340px;padding-left:44px;padding-right:44px}
+ .swirl-pin>.perspective-copy p:nth-child(2){font-size:14px;line-height:1.6}
+}
+@supports not (backdrop-filter:blur(1px)){
+ #site-menu,#enquiry{background:#203854}
+ .project-intro .button{background:#e1eaf2}
+ .contact-section>.button{background:#304964}
+}

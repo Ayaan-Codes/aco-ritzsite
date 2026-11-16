@@ -1,0 +1,60 @@
+/* Opening film is independent of the approved About ribbon. */
+.hero-scroll{position:relative;height:100svh;background:#e3eaf1}
+.hero-scroll.film-ready{height:400svh}
+.hero-scroll .hero-film{position:sticky;top:0;height:100svh;min-height:0;background:#e3eaf1;color:var(--ink);isolation:isolate}
+.hero-film-media{position:absolute;inset:0;overflow:hidden;z-index:-2}
+.hero-film-media video,.hero-film-media picture,.hero-film-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-film-media video{opacity:0}
+.film-ready .hero-film-media video{opacity:1}
+.film-ready .hero-film-media picture{opacity:0}
+.hero-film .hero-shade{z-index:-1;background:linear-gradient(180deg,#e3eaf140 0%,transparent 22%,#0a152c14 48%,#0a152c99 100%);opacity:var(--film-shade,1)}
+.hero-film .hero-copy{top:auto;bottom:17%;color:#fff;animation:none;opacity:var(--film-copy,1);transform:translate3d(0,var(--film-copy-y,0px),0);text-shadow:0 2px 24px #13213c55}
+.hero-film .hero-copy h1{font-size:clamp(48px,6vw,88px)}
+.hero-film .hero-kicker{font-size:22px}
+.film-chapters{position:absolute;inset:0;pointer-events:none}
+.film-chapter{position:absolute;left:7%;right:7%;bottom:17%;max-width:620px;color:#fff;opacity:var(--chapter-opacity,0);transform:translate3d(0,var(--chapter-y,14px),0);text-shadow:0 2px 24px #0a152c66}
+.film-chapter .film-chapter-label{font:10px/1.4 Arial,sans-serif;letter-spacing:.16em;margin:0 0 18px}
+.film-chapter h2{font-family:var(--serif,Georgia,serif);font-size:clamp(36px,4.6vw,66px);line-height:1.03;letter-spacing:-.035em;font-weight:400;margin:0 0 20px}
+.film-chapter>p:last-child{font-size:16px;line-height:1.65;max-width:400px;margin:0;text-wrap:pretty}
+.hero-film .hero-bottom{bottom:33px;color:#fff;gap:20px;align-items:center}
+.hero-film .hero-bottom a{padding:8px 0;font-size:11px}
+.hero-film .hero-bottom>span{opacity:var(--film-copy,1)}
+.hero-film .hero-bottom .film-skip{opacity:1;text-shadow:0 1px 5px #13213c}
+.hero-film-progress{position:absolute;left:2%;right:2%;bottom:20px;height:1px;background:#ffffff55}
+.hero-film-progress i{display:block;height:100%;background:#fff;transform:scaleX(var(--film-progress,0));transform-origin:left}
+body:has(.hero-film) .site-header.is-hero .control.on-dark-surface{color:var(--ink);text-shadow:0 1px 8px #fff9}
+body.motion-paused .hero-scroll{height:100svh}
+body.motion-paused .hero-film .hero-copy{opacity:1;transform:none}
+body.motion-paused .hero-film .hero-shade{opacity:1}
+body.motion-paused .hero-film-media video{opacity:0}
+body.motion-paused .hero-film-media picture{opacity:1}
+body.motion-paused .film-chapters{display:none}
+body.motion-paused .hero-film-progress{display:none}
+@media(max-width:700px) and (orientation:portrait){
+ .hero-scroll.film-ready{height:420svh}
+ body.motion-paused .hero-scroll{height:100svh}
+ .hero-film-media video,.hero-film-media picture,.hero-film-media img{inset:0;transform:none;height:100%;width:100%;object-fit:cover;object-position:center}
+ .hero-film .hero-copy{top:auto;bottom:18%;left:7%;right:7%;color:#fff;text-shadow:0 2px 24px #0a152c66}
+ .hero-film .hero-copy h1{font-size:clamp(38px,10vw,56px);line-height:1.03}
+ .hero-film .hero-kicker{font:10px/1.4 Arial,sans-serif;letter-spacing:.16em;margin-bottom:16px}
+ .hero-film .hero-copy>p:last-child{font-size:12px;line-height:1.5;margin-top:14px}
+ .hero-film .hero-bottom{color:#fff;left:6%;right:6%;bottom:65px;font-size:8px;flex-wrap:wrap;gap:8px}
+ .hero-film .hero-bottom>span:last-child{display:none}
+ .hero-film-progress{left:6%;right:6%;bottom:54px;background:#ffffff44}
+ .film-chapter{bottom:18%;left:7%;right:7%;max-width:none}
+ .film-chapter h2{font-size:clamp(36px,9.2vw,52px);margin-bottom:16px}
+ .film-chapter>p:last-child{font-size:14px;line-height:1.6;max-width:330px}
+}
+@media(min-width:701px) and (min-aspect-ratio:1/1){
+ .hero-film-media video,.hero-film-media img{object-position:center 68%}
+ .hero-film .hero-kicker{font:10px/1.4 Arial,sans-serif;letter-spacing:.16em;margin-bottom:22px}
+}
+@media(max-height:550px) and (orientation:landscape){
+ .hero-film .hero-copy{bottom:20%}.hero-film .hero-copy h1{font-size:40px}
+ .hero-film .hero-kicker{font-size:18px;margin-bottom:10px}.hero-film .hero-copy>p:last-child{margin-top:12px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-scroll.film-ready{height:100svh}.hero-film-media video{display:none}
+ .film-ready .hero-film-media picture{opacity:1}.hero-film-progress,.film-chapters{display:none}
+ .hero-film .hero-copy,.hero-film .hero-shade{opacity:1;transform:none}
+}
