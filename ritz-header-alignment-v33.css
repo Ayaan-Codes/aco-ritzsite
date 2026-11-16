@@ -1,0 +1,7 @@
+/* Centre the label independently of the decorative arrow. */
+.site-header .contact-toggle{position:relative;justify-content:center;gap:0;text-align:center}
+.site-header .contact-toggle>.contact-label{display:block;text-align:center}
+@media(min-width:701px){
+ .site-header .contact-toggle{padding-inline:32px}
+ .site-header .contact-toggle>span[aria-hidden]{position:absolute;right:14px;top:50%;transform:translateY(-50%);line-height:1}
+}
